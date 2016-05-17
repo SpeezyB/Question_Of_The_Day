@@ -1,0 +1,345 @@
+# Logfile created on 2016-05-11 09:19:43 -0400 by logger.rb/1.2.8
+I, [2016-05-11 09:19:43 #10369]  INFO -- main: ----- START -----
+I, [2016-05-11 09:19:43 #10369]  INFO -- main: Full Arguments list : []
+I, [2016-05-11 09:19:43 #10369]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-11 09:19:43 #10369]  INFO -- main: Current offset is : 132
+I, [2016-05-11 09:19:43 #10369]  INFO -- find_question: Question that will be sent is : What are you sure of in your life?
+
+
+I, [2016-05-11 09:19:43 #10369]  INFO -- find_question: Provided Offset is : 132
+I, [2016-05-11 09:23:00 #10448]  INFO -- main: ----- START -----
+I, [2016-05-11 09:23:01 #10448]  INFO -- main: Full Arguments list : []
+I, [2016-05-11 09:23:01 #10448]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-11 09:23:01 #10448]  INFO -- main: Current offset is : 132
+I, [2016-05-11 09:23:01 #10448]  INFO -- find_question: Question that will be sent is : What are you sure of in your life?
+
+
+I, [2016-05-11 09:23:01 #10448]  INFO -- find_question: Provided Offset is : 132
+I, [2016-05-11 09:23:44 #10458]  INFO -- main: ----- START -----
+I, [2016-05-11 09:23:44 #10458]  INFO -- main: Full Arguments list : []
+I, [2016-05-11 09:23:44 #10458]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-11 09:23:44 #10458]  INFO -- main: Current offset is : 132
+I, [2016-05-11 09:23:44 #10458]  INFO -- find_question: Question that will be sent is : What are you sure of in your life?
+
+
+I, [2016-05-11 09:23:44 #10458]  INFO -- find_question: Provided Offset is : 132
+I, [2016-05-11 09:49:28 #10590]  INFO -- main: ----- START -----
+I, [2016-05-11 09:49:29 #10590]  INFO -- main: Full Arguments list : []
+I, [2016-05-11 09:49:29 #10590]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-11 09:49:29 #10590]  INFO -- main: Current offset is : 132
+I, [2016-05-11 09:49:29 #10590]  INFO -- find_question: Question that will be sent is : What are you sure of in your life?
+
+
+I, [2016-05-11 09:49:29 #10590]  INFO -- find_question: Provided Offset is : 132
+I, [2016-05-11 09:50:43 #10600]  INFO -- main: ----- START -----
+I, [2016-05-11 09:50:43 #10600]  INFO -- main: Full Arguments list : []
+I, [2016-05-11 09:50:43 #10600]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-11 09:50:43 #10600]  INFO -- main: Current offset is : 132
+I, [2016-05-11 09:50:43 #10600]  INFO -- find_question: Question that will be sent is : What are you sure of in your life?
+
+
+I, [2016-05-11 09:50:43 #10600]  INFO -- find_question: Provided Offset is : 132
+I, [2016-05-11 10:24:55 #10646]  INFO -- main: ----- START -----
+I, [2016-05-11 10:24:55 #10646]  INFO -- main: Full Arguments list : []
+I, [2016-05-11 10:24:55 #10646]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-11 10:24:55 #10646]  INFO -- main: Current offset is : 132
+I, [2016-05-11 10:24:55 #10646]  INFO -- find_question: Question that will be sent is : What are you sure of in your life?
+
+
+I, [2016-05-11 10:24:55 #10646]  INFO -- find_question: Provided Offset is : 132
+I, [2016-05-11 10:24:57 #10646]  INFO -- send_emails: 4 Emails sent
+I, [2016-05-11 10:24:57 #10646]  INFO -- main: ----- END -----
+
+
+
+I, [2016-05-11 10:27:58 #10671]  INFO -- main: ----- START -----
+I, [2016-05-11 10:27:58 #10671]  INFO -- main: Full Arguments list : []
+I, [2016-05-11 10:27:58 #10671]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-11 10:27:58 #10671]  INFO -- main: Current offset is : 132
+W, [2016-05-11 10:27:58 #10671]  WARN -- send_emails: 0 Emails sent. Already ran today.
+
+ The Current Offset equals the stored offset. 
+ ie: Program was already ran today.
+ 0 Emails sent.
+ Stored offset  : 132
+ Current offset : 132
+
+I, [2016-05-11 10:27:58 #10671]  INFO -- main: ----- END -----
+
+
+
+I, [2016-05-11 17:02:33 #2293]  INFO -- main: ----- START -----
+I, [2016-05-11 17:02:34 #2293]  INFO -- main: Full Arguments list : []
+I, [2016-05-11 17:02:34 #2293]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-11 17:02:34 #2293]  INFO -- main: Current offset is : 132
+W, [2016-05-11 17:02:34 #2293]  WARN -- send_emails: 0 Emails sent. Already ran today.
+
+ The Current Offset equals the stored offset. 
+ ie: Program was already ran today.
+ 0 Emails sent.
+ Stored offset  : 132
+ Current offset : 132
+
+I, [2016-05-11 17:02:34 #2293]  INFO -- main: ----- END -----
+
+
+
+I, [2016-05-12 08:59:00 #3160]  INFO -- main: ----- START -----
+I, [2016-05-12 08:59:00 #3160]  INFO -- main: Full Arguments list : []
+I, [2016-05-12 08:59:00 #3160]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-12 08:59:00 #3160]  INFO -- main: Current offset is : 133
+I, [2016-05-12 08:59:00 #3160]  INFO -- find_question: Question that will be sent is : When you think of home, what, specifically, do you think of?
+
+
+I, [2016-05-12 08:59:00 #3160]  INFO -- find_question: Provided Offset is : 133
+I, [2016-05-12 08:59:03 #3160]  INFO -- send_emails: 4 Emails sent
+I, [2016-05-12 08:59:03 #3160]  INFO -- main: ----- END -----
+
+
+
+I, [2016-05-12 09:59:29 #3246]  INFO -- main: ----- START -----
+I, [2016-05-12 09:59:29 #3246]  INFO -- main: Full Arguments list : ["ds", "parse"]
+I, [2016-05-12 09:59:29 #3246]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-12 09:59:29 #3246]  INFO -- main: Current offset is : 133
+W, [2016-05-12 09:59:29 #3246]  WARN -- send_emails: 0 Emails sent. Already ran today.
+
+ The Current Offset equals the stored offset. 
+ ie: Program was already ran today.
+ 0 Emails sent.
+ Stored offset  : 133
+ Current offset : 133
+
+I, [2016-05-12 09:59:29 #3246]  INFO -- main: ----- END -----
+
+
+
+I, [2016-05-12 10:00:11 #3259]  INFO -- main: ----- START -----
+I, [2016-05-12 10:00:12 #3259]  INFO -- main: Full Arguments list : ["help"]
+I, [2016-05-12 10:00:12 #3259]  INFO -- cmdline_help: Command Line Argument(s) was passed. ARGV= ["help"]
+I, [2016-05-12 10:00:12 #3259]  INFO -- cndline_help: ----- END -----
+
+
+
+I, [2016-05-12 10:35:07 #3655]  INFO -- main: ----- START -----
+I, [2016-05-12 10:35:08 #3655]  INFO -- main: Full Arguments list : ["tail"]
+I, [2016-05-12 10:35:08 #3655]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-12 10:35:08 #3655]  INFO -- main: Current offset is : 133
+W, [2016-05-12 10:35:08 #3655]  WARN -- send_emails: 0 Emails sent. Already ran today.
+
+ The Current Offset equals the stored offset. 
+ ie: Program was already ran today.
+ 0 Emails sent.
+ Stored offset  : 133
+ Current offset : 133
+
+I, [2016-05-12 10:35:08 #3655]  INFO -- main: ----- END -----
+
+
+
+I, [2016-05-12 10:39:36 #3734]  INFO -- main: ----- START -----
+I, [2016-05-12 10:39:36 #3734]  INFO -- main: Full Arguments list : ["ds", "parse", "log_level", "warn"]
+I, [2016-05-12 10:39:36 #3734]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-12 10:39:36 #3734]  INFO -- main: Current offset is : 133
+W, [2016-05-12 10:39:36 #3734]  WARN -- send_emails: 0 Emails sent. Already ran today.
+
+ The Current Offset equals the stored offset. 
+ ie: Program was already ran today.
+ 0 Emails sent.
+ Stored offset  : 133
+ Current offset : 133
+
+I, [2016-05-12 10:39:36 #3734]  INFO -- main: ----- END -----
+
+
+
+I, [2016-05-12 10:54:44 #3926]  INFO -- main: ----- START -----
+I, [2016-05-12 10:54:44 #3926]  INFO -- main: Full Arguments list : ["ds", "parse", "log_level", "warn"]
+I, [2016-05-12 10:54:44 #3926]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-12 10:54:44 #3926]  INFO -- main: Current offset is : 133
+W, [2016-05-12 10:54:44 #3926]  WARN -- send_emails: 0 Emails sent. Already ran today.
+
+ The Current Offset equals the stored offset. 
+ ie: Program was already ran today.
+ 0 Emails sent.
+ Stored offset  : 133
+ Current offset : 133
+
+I, [2016-05-12 10:54:44 #3926]  INFO -- main: ----- END -----
+
+
+
+I, [2016-05-12 15:15:38 #1835]  INFO -- main: ----- START -----
+I, [2016-05-12 15:15:39 #1835]  INFO -- main: Full Arguments list : []
+I, [2016-05-12 15:15:39 #1835]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-12 15:15:39 #1835]  INFO -- main: Current offset is : 133
+W, [2016-05-12 15:15:39 #1835]  WARN -- send_emails: 0 Emails sent. Already ran today.
+
+ The Current Offset equals the stored offset. 
+ ie: Program was already ran today.
+ 0 Emails sent.
+ Stored offset  : 133
+ Current offset : 133
+
+I, [2016-05-12 15:15:39 #1835]  INFO -- main: ----- END -----
+
+
+
+I, [2016-05-13 08:58:59 #3926]  INFO -- main: ----- START -----
+I, [2016-05-13 08:58:59 #3926]  INFO -- main: Full Arguments list : []
+I, [2016-05-13 08:58:59 #3926]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-13 08:58:59 #3926]  INFO -- main: Current offset is : 134
+I, [2016-05-13 08:58:59 #3926]  INFO -- find_question: Question that will be sent is : Whats the difference between settling for things and accepting the way things are?
+
+
+I, [2016-05-13 08:58:59 #3926]  INFO -- find_question: Provided Offset is : 134
+I, [2016-05-13 08:59:02 #3926]  INFO -- send_emails: 4 Emails sent
+I, [2016-05-13 08:59:02 #3926]  INFO -- main: ----- END -----
+
+
+
+I, [2016-05-13 10:17:39 #25566]  INFO -- main: ----- START -----
+I, [2016-05-13 10:17:40 #25566]  INFO -- main: Full Arguments list : ["ds"]
+I, [2016-05-13 10:17:40 #25566]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-13 10:17:40 #25566]  INFO -- main: Current offset is : 134
+W, [2016-05-13 10:17:40 #25566]  WARN -- send_emails: 0 Emails sent. Already ran today.
+
+ The Current Offset equals the stored offset. 
+ ie: Program was already ran today.
+ 0 Emails sent.
+ Stored offset  : 134
+ Current offset : 134
+
+I, [2016-05-13 10:17:40 #25566]  INFO -- main: ----- END -----
+
+
+
+I, [2016-05-13 11:58:25 #25399]  INFO -- main: ----- START -----
+I, [2016-05-13 11:58:25 #25399]  INFO -- main: Full Arguments list : ["ds"]
+I, [2016-05-13 11:58:25 #25399]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-13 11:58:25 #25399]  INFO -- main: Current offset is : 134
+W, [2016-05-13 11:58:25 #25399]  WARN -- send_emails: 0 Emails sent. Already ran today.
+
+ The Current Offset equals the stored offset. 
+ ie: Program was already ran today.
+ 0 Emails sent.
+ Stored offset  : 134
+ Current offset : 134
+
+I, [2016-05-13 11:58:25 #25399]  INFO -- main: ----- END -----
+
+
+
+I, [2016-05-13 12:22:02 #25858]  INFO -- main: ----- START -----
+I, [2016-05-13 12:22:02 #25858]  INFO -- main: Full Arguments list : ["ds"]
+I, [2016-05-13 12:22:02 #25858]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-13 12:22:02 #25858]  INFO -- main: Current offset is : 134
+W, [2016-05-13 12:22:02 #25858]  WARN -- send_emails: 0 Emails sent. Already ran today.
+
+ The Current Offset equals the stored offset. 
+ ie: Program was already ran today.
+ 0 Emails sent.
+ Stored offset  : 134
+ Current offset : 134
+
+I, [2016-05-13 12:22:02 #25858]  INFO -- main: ----- END -----
+
+
+
+I, [2016-05-13 13:08:31 #6471]  INFO -- main: ----- START -----
+I, [2016-05-13 13:08:32 #6471]  INFO -- main: Full Arguments list : ["tial"]
+I, [2016-05-13 13:08:32 #6471]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-13 13:08:32 #6471]  INFO -- main: Current offset is : 134
+W, [2016-05-13 13:08:32 #6471]  WARN -- send_emails: 0 Emails sent. Already ran today.
+
+ The Current Offset equals the stored offset. 
+ ie: Program was already ran today.
+ 0 Emails sent.
+ Stored offset  : 134
+ Current offset : 134
+
+I, [2016-05-13 13:08:32 #6471]  INFO -- main: ----- END -----
+
+
+
+I, [2016-05-13 13:13:54 #6587]  INFO -- main: ----- START -----
+I, [2016-05-13 13:13:54 #6587]  INFO -- main: Full Arguments list : ["tial", "-f"]
+I, [2016-05-13 13:13:54 #6587]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-13 13:13:54 #6587]  INFO -- main: Current offset is : 134
+W, [2016-05-13 13:13:54 #6587]  WARN -- send_emails: 0 Emails sent. Already ran today.
+
+ The Current Offset equals the stored offset. 
+ ie: Program was already ran today.
+ 0 Emails sent.
+ Stored offset  : 134
+ Current offset : 134
+
+I, [2016-05-13 13:13:54 #6587]  INFO -- main: ----- END -----
+
+
+
+I, [2016-05-14 03:00:02 #20768]  INFO -- main: ----- START -----
+I, [2016-05-14 03:00:03 #20768]  INFO -- main: Full Arguments list : []
+I, [2016-05-14 03:00:03 #20768]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-14 03:00:03 #20768]  INFO -- main: Current offset is : 135
+I, [2016-05-14 03:00:03 #20768]  INFO -- find_question: Question that will be sent is : How many of your friends would you trust with your life?
+
+
+I, [2016-05-14 03:00:03 #20768]  INFO -- find_question: Provided Offset is : 135
+I, [2016-05-14 03:00:05 #20768]  INFO -- send_emails: 4 Emails sent
+I, [2016-05-14 03:00:05 #20768]  INFO -- main: ----- END -----
+
+
+
+I, [2016-05-15 03:00:02 #6486]  INFO -- main: ----- START -----
+I, [2016-05-15 03:00:03 #6486]  INFO -- main: Full Arguments list : []
+I, [2016-05-15 03:00:03 #6486]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-15 03:00:03 #6486]  INFO -- main: Current offset is : 136
+I, [2016-05-15 03:00:03 #6486]  INFO -- find_question: Question that will be sent is : Whats your definition of heaven?
+
+
+I, [2016-05-15 03:00:03 #6486]  INFO -- find_question: Provided Offset is : 136
+I, [2016-05-15 03:00:05 #6486]  INFO -- send_emails: 4 Emails sent
+I, [2016-05-15 03:00:05 #6486]  INFO -- main: ----- END -----
+
+
+
+I, [2016-05-15 20:44:23 #27293]  INFO -- main: ----- START -----
+I, [2016-05-15 20:44:23 #27293]  INFO -- main: Full Arguments list : []
+I, [2016-05-15 20:44:23 #27293]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-15 20:44:23 #27293]  INFO -- main: Current offset is : 136
+W, [2016-05-15 20:44:23 #27293]  WARN -- send_emails: 0 Emails sent. Already ran today.
+
+ The Current Offset equals the stored offset. 
+ ie: Program was already ran today.
+ 0 Emails sent.
+ Stored offset  : 136
+ Current offset : 136
+
+I, [2016-05-15 20:44:23 #27293]  INFO -- main: ----- END -----
+
+
+
+I, [2016-05-15 20:50:14 #27375]  INFO -- main: ----- START -----
+I, [2016-05-15 20:50:15 #27375]  INFO -- main: Full Arguments list : ["ds", "yday?"]
+I, [2016-05-15 20:50:15 #27375]  INFO -- ret_yday: The Number of Day in the Year is: 136
+I, [2016-05-15 20:50:15 #27375]  INFO -- ret_yday: Command Line Argument(s) was passed. ARGV= ["ds", "yday?"]
+I, [2016-05-15 20:50:15 #27375]  INFO -- ret_yday: ----- END -----
+
+
+
+I, [2016-05-15 21:46:01 #28283]  INFO -- main: ----- START -----
+I, [2016-05-15 21:46:02 #28283]  INFO -- main: Full Arguments list : ["ds"]
+I, [2016-05-15 21:46:02 #28283]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-15 21:46:02 #28283]  INFO -- main: Current offset is : 136
+W, [2016-05-15 21:46:02 #28283]  WARN -- send_emails: 0 Emails sent. Already ran today.
+
+ The Current Offset equals the stored offset. 
+ ie: Program was already ran today.
+ 0 Emails sent.
+ Stored offset  : 136
+ Current offset : 136
+
+I, [2016-05-15 21:46:02 #28283]  INFO -- main: ----- END -----
+
+
+
