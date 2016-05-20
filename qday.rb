@@ -92,7 +92,7 @@ def send_emails(input_file, recipients, subject_line, message)
                 :password             => input_file[4],
                 :authentication       => input_file[5],
                 :enable_starttls_auto => input_file[6]  }
-    
+
     if ( subject_line == nil || subject_line == "" )
         subject_line = input_file[7]
     end
@@ -248,7 +248,6 @@ def yday_to_date(rawyday)
     @weekday, @day, @month, @year = "", "", "", Time.now.localtime("-05:00").year.to_s  # Need to account for past years = TODO
 
     days_in_month.each{|mon_val| # An Array of each Key Value Pair
-        puts "mon_val = #{mon_val}\nrawyday = #{rawyday}"
         if (rawyday - mon_val[1] <= 0)
             @month = mon_val[0]
             @day = rawyday
@@ -416,6 +415,13 @@ def find_question(search_offset) # Find the question associated with the provide
     return found_question
 end
 
+def is_croned?
+    #check for cron 1st
+    begin
+        false unless (`ps -e | grep cron` == nil) || (`crontab -l`.to_str.chomp!.include?("no crontab for")); true
+    end
+end
+
     # Begin Main Program Here.
 begin
 check_log_date()
@@ -437,9 +443,13 @@ if !( internet_connection? )
     exit()
 end
 
+    #Check if cron is running and if there is a cronjob for me in the crontab
+is_cron = is_croned?()
+puts ("is_cron running or crontabbed == #{is_cron}")
+$log.info('main') { "is_cron running or crontabbed == #{is_cron}"}
+
     #Load your saved Data form the YAML file and put into 3 objects
 $QDAY_DOC_SET, $QDAY_DOC_RECP, $QDAY_DOC_QUESTIONS = YAML.load_file(DATA_FILE_YAML)
-
 
 $log.info('main') { "Full Arguments list : " + ARGV.to_s }
 ARGV.each_index{|a|
@@ -584,5 +594,5 @@ f.write($IsCompleted.to_s + "  ")
     # if it's been run today or not
 end
 __END__
-136
-true        
+140
+true

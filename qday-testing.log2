@@ -343,3 +343,47 @@ I, [2016-05-15 21:46:02 #28283]  INFO -- main: ----- END -----
 
 
 
+I, [2016-05-19 20:22:02 #4389]  INFO -- main: ----- START -----
+I, [2016-05-19 20:22:02 #4389]  INFO -- main: is_cron running or crontabbed == true
+I, [2016-05-19 20:22:02 #4389]  INFO -- main: Full Arguments list : ["ds"]
+I, [2016-05-19 20:22:02 #4389]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-19 20:22:02 #4389]  INFO -- main: Current offset is : 140
+I, [2016-05-19 20:22:02 #4389]  INFO -- find_question: Question that will be sent is : What is your most prized possession?
+
+
+I, [2016-05-19 20:22:02 #4389]  INFO -- find_question: Provided Offset is : 137
+W, [2016-05-19 20:22:02 #4389]  WARN -- main - resend_check: Current offset : 137
+W, [2016-05-19 20:22:02 #4389]  WARN -- main - resend_check: Resend Msg : What is your most prized possession?
+
+
+This is a ReSend for :  May 16 2016
+W, [2016-05-19 20:22:02 #4389]  WARN -- main - resend_check: This is a ReSend for :  May 16 2016
+I, [2016-05-19 20:22:02 #4389]  INFO -- find_question: Question that will be sent is : How would you describe yourself in one sentence?
+
+
+I, [2016-05-19 20:22:02 #4389]  INFO -- find_question: Provided Offset is : 138
+W, [2016-05-19 20:22:02 #4389]  WARN -- main - resend_check: Current offset : 138
+W, [2016-05-19 20:22:02 #4389]  WARN -- main - resend_check: Resend Msg : How would you describe yourself in one sentence?
+
+
+This is a ReSend for :  May 17 2016
+W, [2016-05-19 20:22:02 #4389]  WARN -- main - resend_check: This is a ReSend for :  May 17 2016
+I, [2016-05-19 20:22:02 #4389]  INFO -- find_question: Question that will be sent is : What stands between you and happiness?
+
+
+I, [2016-05-19 20:22:02 #4389]  INFO -- find_question: Provided Offset is : 139
+W, [2016-05-19 20:22:02 #4389]  WARN -- main - resend_check: Current offset : 139
+W, [2016-05-19 20:22:02 #4389]  WARN -- main - resend_check: Resend Msg : What stands between you and happiness?
+
+
+This is a ReSend for :  May 18 2016
+W, [2016-05-19 20:22:02 #4389]  WARN -- main - resend_check: This is a ReSend for :  May 18 2016
+I, [2016-05-19 20:22:02 #4389]  INFO -- find_question: Question that will be sent is : What makes a person beautiful?
+
+
+I, [2016-05-19 20:22:02 #4389]  INFO -- find_question: Provided Offset is : 140
+I, [2016-05-19 20:22:02 #4389]  INFO -- send_emails: 4 Emails sent
+I, [2016-05-19 20:22:02 #4389]  INFO -- main: ----- END -----
+
+
+
