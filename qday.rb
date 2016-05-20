@@ -444,9 +444,12 @@ if !( internet_connection? )
 end
 
     #Check if cron is running and if there is a cronjob for me in the crontab
-is_cron = is_croned?()
-puts ("is_cron running or crontabbed == #{is_cron}")
-$log.info('main') { "is_cron running or crontabbed == #{is_cron}"}
+is_cron = is_croned?
+if !(is_cron)
+    $log.warn('main') { "is_cron running or crontabbed == #{is_cron}"}
+else
+    $log.info('main') { "is_cron running or crontabbed == #{is_cron}"}
+end
 
     #Load your saved Data form the YAML file and put into 3 objects
 $QDAY_DOC_SET, $QDAY_DOC_RECP, $QDAY_DOC_QUESTIONS = YAML.load_file(DATA_FILE_YAML)
