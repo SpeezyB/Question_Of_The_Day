@@ -150,6 +150,7 @@ def auto_parse_log_file(logfilepath)
                          end }
                      }
     parsed_message += "\n\nCurrent offset of today : #{Time.now.localtime("-05:00").yday}\nTodays's Date is : #{Time.now.localtime("-05:00")}\n"
+
     if (error_dates.empty?)
         return nil
     else
@@ -322,6 +323,7 @@ def cmdline_help
             no_rs               : This will turn OFF the automatic check and resend of past emails.
             log_level ERROR     : What level to return from the auto_parse_log_file :default is ERROR,
                                    other options are WARN or INFO (which would return the whole file)
+            ip?                 : returns current public IP address
 
 
     """)
@@ -422,7 +424,22 @@ def is_croned?
     end
 end
 
-    # Begin Main Program Here.
+def find_ip?
+    begin
+        return `wget http://ipinfo.io/ip -qO -`
+    end
+end
+
+def ret_ip
+    @ip = find_ip?
+    puts("Public IP: #{@ip}")
+    $log.info('ret_ip') {"Pulic IP Adress: " + @ip}
+    $log.info('ret_ip') {"Command Line Argument(s) was passed. ARGV= " + ARGV.to_s}
+    $log.info('ret_ip') {"----- END -----\n\n\n"}
+    exit()
+end
+
+    # ************************ Begin Main Program Here. ************************
 begin
 check_log_date()
 $log.level = Logger::INFO            # all msg's from info and up will be logged
@@ -457,21 +474,26 @@ $QDAY_DOC_SET, $QDAY_DOC_RECP, $QDAY_DOC_QUESTIONS = YAML.load_file(DATA_FILE_YA
 $log.info('main') { "Full Arguments list : " + ARGV.to_s }
 ARGV.each_index{|a|
           case ARGV[a]
-         when "ds"          then $DontSend = true
-         when "fs"          then $ForceSend = true
-         when "yday?"       then ret_yday
-         when "yday"        then check_yday(ARGV[a+1].to_i)
-         when "date?"       then ret_date(ARGV[a+1])
-         when "date"        then manDate_to_manOffset(ARGV[a+1])
-         when "parse"       then $Parse = true
-         when "help"        then cmdline_help
-         when "--help"      then cmdline_help
-         when "msg"         then $Add_msg = add_msg
-         when "encode"      then encode(ARGV[a+1])
-         when "decode"      then decode(ARGV[a+1])
-         when "no_rs"       then $Resend = false
-         when "log_level"   then $log_level = ARGV[a+1]
+             when "ds"          then $DontSend = true
+             when "fs"          then $ForceSend = true
+             when "yday?"       then ret_yday
+             when "yday"        then check_yday(ARGV[a+1].to_i)
+             when "date?"       then ret_date(ARGV[a+1])
+             when "date"        then manDate_to_manOffset(ARGV[a+1])
+             when "parse"       then $Parse = true
+             when "help"        then cmdline_help
+             when "--help"      then cmdline_help
+             when "msg"         then $Add_msg = add_msg
+             when "encode"      then encode(ARGV[a+1])
+             when "decode"      then decode(ARGV[a+1])
+             when "no_rs"       then $Resend = false
+             when "log_level"   then $log_level = ARGV[a+1]
+             when "ip?"         then ret_ip
+         else
+             cmdline_help
          end }
+
+if
 
 if ($DontSend); puts("Don't Send has been turned on.\nNo Emails will be Delieverd!!\n"); end
 
