@@ -243,16 +243,12 @@ def yday_to_date(rawyday)
         6       =>  "Sat"
     }
 
-    # days_in_month_array = days_in_month.to_a.flatten!
-    # days_in_week_array = days_in_week.to_a.flatten!
-
-    @weekday, @day, @month, @year = "", "", "", Time.now.localtime("-05:00").year.to_s  # Need to account for past years = TODO
+    @weekday, @day, @month, @year = "", "", "", Time.now.localtime("-05:00").year.to_s  
 
     days_in_month.each{|mon_val| # An Array of each Key Value Pair
         if (rawyday - mon_val[1] <= 0)
             @month = mon_val[0]
             @day = rawyday
-            puts "@month = #{@month}\n@day = #{@day}"
             3.times{ # weeks in a month
                 if (rawyday - 7 < 0)
                     @wkdy = Time.new(@year, @month, @day, 5, 1, 1, "-05:00").wday
@@ -456,8 +452,12 @@ end
 if !( internet_connection? )
     puts ("      !!!Error No Internet Connection Found!!!")
     puts ("Please Establish an Internet Connection and Re-Run!\n\n")
-    $log.error('main') { "No Internet Connection - Unable to open 'http://www.google.com/'"  + "\n----- END -----\n\n\n"}
+    $log.error('main') { "No Internet Connection - Unable to open 'http://www.google.com/'"}
+    $log.error('main') {"----- END -----\n\n\n"}
     exit()
+else
+    IP = find_ip?
+    $log.info('main') { "Public IP Address: " + IP.to_s }
 end
 
     #Check if cron is running and if there is a cronjob for me in the crontab
@@ -493,8 +493,6 @@ ARGV.each_index{|a|
              cmdline_help
          end }
 
-if
-
 if ($DontSend); puts("Don't Send has been turned on.\nNo Emails will be Delieverd!!\n"); end
 
     # (1 .. 500) 500 is the max amount of emails / day you can send with Gmail
@@ -524,7 +522,6 @@ else
     $log.info('main') { "Current offset is Manually Set at : " + days_offset.to_s }
 end
 
-
     # Determine if it's been run today or not
 store_pos = DATA.pos
 f = File.new($0,'r+')
@@ -544,6 +541,7 @@ if ( ($Resend == true) || (data_store[0].to_i + 1 != days_offset.to_i) || (data_
     end
     diff = days_to_resend.to_i
     puts ("The total amount of days to resend : #{diff}")
+    $log.warn('main - resend_check') {"The total amount of days to resend : " + diff.to_s }
     diff.downto(2){
         resend_yday = days_offset.to_i - days_to_resend.to_i + 1
         todays_question = find_question(resend_yday)    # This might need to be (days_offset - days_to_resend + 1)
@@ -612,12 +610,12 @@ if ( Time.now.localtime("-05:00").friday? || $Parse == true || Time.now.localtim
 end
 
 f.seek(store_pos)
-f.write(days_offset.to_s + "\n")
-f.write($IsCompleted.to_s + "  ")
+f.write(days_offset.to_s + "\n" + $IsCompleted.to_s + "  \n" + IP.to_s)
 
     # Below the __end__ is the last ran days_offset value to compare
     # if it's been run today or not
 end
 __END__
-140
+149
 true
+24.141.10.5

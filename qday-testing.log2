@@ -387,3 +387,111 @@ I, [2016-05-19 20:22:02 #4389]  INFO -- main: ----- END -----
 
 
 
+I, [2016-05-28 17:15:41 #27010]  INFO -- main: ----- START -----
+I, [2016-05-28 17:15:41 #27010]  INFO -- main: Public IP Address: 24.141.10.5
+
+I, [2016-05-28 17:15:42 #27010]  INFO -- main: is_cron running or crontabbed == true
+I, [2016-05-28 17:15:42 #27010]  INFO -- main: Full Arguments list : ["ds", "ip?"]
+I, [2016-05-28 17:15:42 #27010]  INFO -- ret_ip: Pulic IP Adress: 24.141.10.5
+
+I, [2016-05-28 17:15:42 #27010]  INFO -- ret_ip: Command Line Argument(s) was passed. ARGV= ["ds", "ip?"]
+I, [2016-05-28 17:15:42 #27010]  INFO -- ret_ip: ----- END -----
+
+
+
+I, [2016-05-28 17:16:58 #27077]  INFO -- main: ----- START -----
+I, [2016-05-28 17:16:59 #27077]  INFO -- main: Public IP Address: 24.141.10.5
+
+I, [2016-05-28 17:16:59 #27077]  INFO -- main: is_cron running or crontabbed == true
+I, [2016-05-28 17:16:59 #27077]  INFO -- main: Full Arguments list : ["ds"]
+I, [2016-05-28 17:16:59 #27077]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-05-28 17:16:59 #27077]  INFO -- main: Current offset is : 149
+I, [2016-05-28 17:16:59 #27077]  INFO -- find_question: Question that will be sent is : Is there ever a time when giving up makes sense?
+
+
+I, [2016-05-28 17:16:59 #27077]  INFO -- find_question: Provided Offset is : 141
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: Current offset : 141
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: Resend Msg : Is there ever a time when giving up makes sense?
+
+
+This is a ReSend for :  May 20 2016
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: This is a ReSend for :  May 20 2016
+I, [2016-05-28 17:16:59 #27077]  INFO -- find_question: Question that will be sent is : What makes you proud?
+
+
+I, [2016-05-28 17:16:59 #27077]  INFO -- find_question: Provided Offset is : 142
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: Current offset : 142
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: Resend Msg : What makes you proud?
+
+
+This is a ReSend for :  May 21 2016
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: This is a ReSend for :  May 21 2016
+I, [2016-05-28 17:16:59 #27077]  INFO -- find_question: Question that will be sent is : How do you find the strength to do what you know in your heart is right?
+
+
+I, [2016-05-28 17:16:59 #27077]  INFO -- find_question: Provided Offset is : 143
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: Current offset : 143
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: Resend Msg : How do you find the strength to do what you know in your heart is right?
+
+
+This is a ReSend for :  May 22 2016
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: This is a ReSend for :  May 22 2016
+I, [2016-05-28 17:16:59 #27077]  INFO -- find_question: Question that will be sent is : Where do you find peace?
+
+
+I, [2016-05-28 17:16:59 #27077]  INFO -- find_question: Provided Offset is : 144
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: Current offset : 144
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: Resend Msg : Where do you find peace?
+
+
+This is a ReSend for :  May 23 2016
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: This is a ReSend for :  May 23 2016
+I, [2016-05-28 17:16:59 #27077]  INFO -- find_question: Question that will be sent is : When have you worked hard and loved every minute of it?
+
+
+I, [2016-05-28 17:16:59 #27077]  INFO -- find_question: Provided Offset is : 145
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: Current offset : 145
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: Resend Msg : When have you worked hard and loved every minute of it?
+
+
+This is a ReSend for :  May 24 2016
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: This is a ReSend for :  May 24 2016
+I, [2016-05-28 17:16:59 #27077]  INFO -- find_question: Question that will be sent is : How short would your life have to be before you would start living differently today?
+
+
+I, [2016-05-28 17:16:59 #27077]  INFO -- find_question: Provided Offset is : 146
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: Current offset : 146
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: Resend Msg : How short would your life have to be before you would start living differently today?
+
+
+This is a ReSend for :  May 25 2016
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: This is a ReSend for :  May 25 2016
+I, [2016-05-28 17:16:59 #27077]  INFO -- find_question: Question that will be sent is : Is it better to have loved and lost or to have never loved at all?
+
+
+I, [2016-05-28 17:16:59 #27077]  INFO -- find_question: Provided Offset is : 147
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: Current offset : 147
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: Resend Msg : Is it better to have loved and lost or to have never loved at all?
+
+
+This is a ReSend for :  May 26 2016
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: This is a ReSend for :  May 26 2016
+I, [2016-05-28 17:16:59 #27077]  INFO -- find_question: Question that will be sent is : What would you do if you made a mistake and somebody died?
+
+
+I, [2016-05-28 17:16:59 #27077]  INFO -- find_question: Provided Offset is : 148
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: Current offset : 148
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: Resend Msg : What would you do if you made a mistake and somebody died?
+
+
+This is a ReSend for :  May 27 2016
+W, [2016-05-28 17:16:59 #27077]  WARN -- main - resend_check: This is a ReSend for :  May 27 2016
+I, [2016-05-28 17:16:59 #27077]  INFO -- find_question: Question that will be sent is : Who do you trust and why?
+
+
+I, [2016-05-28 17:16:59 #27077]  INFO -- find_question: Provided Offset is : 149
+I, [2016-05-28 17:16:59 #27077]  INFO -- send_emails: 4 Emails sent
+I, [2016-05-28 17:16:59 #27077]  INFO -- main: ----- END -----
+
+
+
