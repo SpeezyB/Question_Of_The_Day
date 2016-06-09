@@ -495,3 +495,27 @@ I, [2016-05-28 17:16:59 #27077]  INFO -- main: ----- END -----
 
 
 
+I, [2016-05-28 17:40:12 #28177]  INFO -- main: ----- START -----
+I, [2016-05-28 17:40:13 #28177]  INFO -- main: Public IP Address: 24.141.10.5
+
+I, [2016-05-28 17:40:13 #28177]  INFO -- main: is_cron running or crontabbed == true
+I, [2016-05-28 17:40:13 #28177]  INFO -- main: Full Arguments list : ["ds", "ip?"]
+I, [2016-05-28 17:40:13 #28177]  INFO -- ret_ip: Pulic IP Adress: 24.141.10.5
+
+I, [2016-05-28 17:40:13 #28177]  INFO -- ret_ip: Command Line Argument(s) was passed. ARGV= ["ds", "ip?"]
+I, [2016-05-28 17:40:13 #28177]  INFO -- ret_ip: ----- END -----
+
+
+
+I, [2016-05-28 17:42:40 #28326]  INFO -- main: ----- START -----
+I, [2016-05-28 17:42:41 #28326]  INFO -- main: Public IP Address: 24.141.10.5
+
+I, [2016-05-28 17:42:41 #28326]  INFO -- main: is_cron running or crontabbed == true
+I, [2016-05-28 17:42:41 #28326]  INFO -- main: Full Arguments list : ["ds", "ip?"]
+I, [2016-05-28 17:42:41 #28326]  INFO -- ret_ip: Pulic IP Adress: 24.141.10.5
+
+I, [2016-05-28 17:42:41 #28326]  INFO -- ret_ip: Command Line Argument(s) was passed. ARGV= ["ds", "ip?"]
+I, [2016-05-28 17:42:41 #28326]  INFO -- ret_ip: ----- END -----
+
+
+
