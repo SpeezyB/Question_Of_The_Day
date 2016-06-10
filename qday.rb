@@ -319,7 +319,8 @@ def cmdline_help
             no_rs               : This will turn OFF the automatic check and resend of past emails.
             log_level ERROR     : What level to return from the auto_parse_log_file :default is ERROR,
                                    other options are WARN or INFO (which would return the whole file)
-            ip?                 : returns current public IP address
+            ip?                 : returns current public IP address and exits
+            hostname?           : returns the hostname of the local device and exits
 
 
     """)
@@ -423,15 +424,34 @@ end
 def find_ip?
     begin
         return `wget http://ipinfo.io/ip -qO -`
+    rescue
+        return "127.0.0.1"
+    end
+end
+
+def find_hostname?
+    begin
+        return `uname -n`
+    rescue
+        return nil
     end
 end
 
 def ret_ip
     @ip = find_ip?
     puts("Public IP: #{@ip}")
-    $log.info('ret_ip') {"Pulic IP Adress: " + @ip}
+    $log.info('ret_ip') {"Pulic IP Adress: " + @ip.chomp!.to_s}
     $log.info('ret_ip') {"Command Line Argument(s) was passed. ARGV= " + ARGV.to_s}
     $log.info('ret_ip') {"----- END -----\n\n\n"}
+    exit()
+end
+
+def ret_hostname
+    @hostname = find_hostname?
+    puts("Local Hostname: #{@hostname}")
+    $log.info('ret_hostname') {"Local Hostname: " + @hostname.chomp!.to_s}
+    $log.info('ret_hostname') {"Command Line Argument(s) was passed. ARGV= " + ARGV.to_s}
+    $log.info('ret_hostname') {"----- END -----\n\n\n"}
     exit()
 end
 
@@ -456,8 +476,10 @@ if !( internet_connection? )
     $log.error('main') {"----- END -----\n\n\n"}
     exit()
 else
-    IP = find_ip?
-    $log.info('main') { "Public IP Address: " + IP.to_s }
+    ip = find_ip?
+    hostname = find_hostname?
+    $log.info('main') { "Local Hostname: " + hostname.chomp!.to_s }
+    $log.info('main') { "Public IP Address: " + ip.chomp!.to_s }
 end
 
     #Check if cron is running and if there is a cronjob for me in the crontab
@@ -489,6 +511,7 @@ ARGV.each_index{|a|
              when "no_rs"       then $Resend = false
              when "log_level"   then $log_level = ARGV[a+1]
              when "ip?"         then ret_ip
+             when "hostname?"   then ret_hostname
          else
              cmdline_help
          end }
@@ -610,12 +633,13 @@ if ( Time.now.localtime("-05:00").friday? || $Parse == true || Time.now.localtim
 end
 
 f.seek(store_pos)
-f.write(days_offset.to_s + "\n" + $IsCompleted.to_s + "  \n" + IP.to_s)
+f.write(days_offset.to_s + "\n" + $IsCompleted.to_s + "   \n" + hostname.to_s + "\n" + ip.to_s + "  " )
 
     # Below the __end__ is the last ran days_offset value to compare
     # if it's been run today or not
 end
 __END__
-149
-true
-24.141.10.5
+161
+true   
+aBox
+24.141.10.5  
