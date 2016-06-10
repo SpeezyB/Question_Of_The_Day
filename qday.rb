@@ -520,7 +520,11 @@ ARGV.each_index{|a|
              cmdline_help
          end }
 
-if ($DontSend); puts("Don't Send has been turned on.\nNo Emails will be Delieverd!!\n"); end
+if ($DontSend) 
+    puts("Don't Send has been turned on.\nNo Emails will be Delieverd!!\n")
+    $log.warn('main') {"Don't Send has been turned on!"}
+    $log.warn('main') {"Emails will not be Sent!"}
+end
 
     # (1 .. 500) 500 is the max amount of emails / day you can send with Gmail
 recipients_list = Array.new
@@ -646,4 +650,4 @@ __END__
 161
 true   
 aBox
-24.141.10.5  
+24.141.10.5  5  
