@@ -92,7 +92,7 @@ def send_emails(input_file, recipients, subject_line, message)
                 :password             => input_file[4],
                 :authentication       => input_file[5],
                 :enable_starttls_auto => input_file[6]  }
-    
+
     if ( subject_line == nil || subject_line == "" )
         subject_line = input_file[7]
     end
@@ -150,6 +150,7 @@ def auto_parse_log_file(logfilepath)
                          end }
                      }
     parsed_message += "\n\nCurrent offset of today : #{Time.now.localtime("-05:00").yday}\nTodays's Date is : #{Time.now.localtime("-05:00")}\n"
+
     if (error_dates.empty?)
         return nil
     else
@@ -242,17 +243,12 @@ def yday_to_date(rawyday)
         6       =>  "Sat"
     }
 
-    # days_in_month_array = days_in_month.to_a.flatten!
-    # days_in_week_array = days_in_week.to_a.flatten!
-
-    @weekday, @day, @month, @year = "", "", "", Time.now.localtime("-05:00").year.to_s  # Need to account for past years = TODO
+    @weekday, @day, @month, @year = "", "", "", Time.now.localtime("-05:00").year.to_s  
 
     days_in_month.each{|mon_val| # An Array of each Key Value Pair
-        puts "mon_val = #{mon_val}\nrawyday = #{rawyday}"
         if (rawyday - mon_val[1] <= 0)
             @month = mon_val[0]
             @day = rawyday
-            puts "@month = #{@month}\n@day = #{@day}"
             3.times{ # weeks in a month
                 if (rawyday - 7 < 0)
                     @wkdy = Time.new(@year, @month, @day, 5, 1, 1, "-05:00").wday
@@ -323,6 +319,7 @@ def cmdline_help
             no_rs               : This will turn OFF the automatic check and resend of past emails.
             log_level ERROR     : What level to return from the auto_parse_log_file :default is ERROR,
                                    other options are WARN or INFO (which would return the whole file)
+            ip?                 : returns current public IP address
 
 
     """)
@@ -416,7 +413,29 @@ def find_question(search_offset) # Find the question associated with the provide
     return found_question
 end
 
-    # Begin Main Program Here.
+def is_croned?
+    #check for cron 1st
+    begin
+        false unless (`ps -e | grep cron` == nil) || (`crontab -l`.to_str.chomp!.include?("no crontab for")); true
+    end
+end
+
+def find_ip?
+    begin
+        return `wget http://ipinfo.io/ip -qO -`
+    end
+end
+
+def ret_ip
+    @ip = find_ip?
+    puts("Public IP: #{@ip}")
+    $log.info('ret_ip') {"Pulic IP Adress: " + @ip}
+    $log.info('ret_ip') {"Command Line Argument(s) was passed. ARGV= " + ARGV.to_s}
+    $log.info('ret_ip') {"----- END -----\n\n\n"}
+    exit()
+end
+
+    # ************************ Begin Main Program Here. ************************
 begin
 check_log_date()
 $log.level = Logger::INFO            # all msg's from info and up will be logged
@@ -433,31 +452,45 @@ end
 if !( internet_connection? )
     puts ("      !!!Error No Internet Connection Found!!!")
     puts ("Please Establish an Internet Connection and Re-Run!\n\n")
-    $log.error('main') { "No Internet Connection - Unable to open 'http://www.google.com/'"  + "\n----- END -----\n\n\n"}
+    $log.error('main') { "No Internet Connection - Unable to open 'http://www.google.com/'"}
+    $log.error('main') {"----- END -----\n\n\n"}
     exit()
+else
+    IP = find_ip?
+    $log.info('main') { "Public IP Address: " + IP.to_s }
+end
+
+    #Check if cron is running and if there is a cronjob for me in the crontab
+is_cron = is_croned?
+if !(is_cron)
+    $log.warn('main') { "is_cron running or crontabbed == #{is_cron}"}
+else
+    $log.info('main') { "is_cron running or crontabbed == #{is_cron}"}
 end
 
     #Load your saved Data form the YAML file and put into 3 objects
 $QDAY_DOC_SET, $QDAY_DOC_RECP, $QDAY_DOC_QUESTIONS = YAML.load_file(DATA_FILE_YAML)
 
-
 $log.info('main') { "Full Arguments list : " + ARGV.to_s }
 ARGV.each_index{|a|
           case ARGV[a]
-         when "ds"          then $DontSend = true
-         when "fs"          then $ForceSend = true
-         when "yday?"       then ret_yday
-         when "yday"        then check_yday(ARGV[a+1].to_i)
-         when "date?"       then ret_date(ARGV[a+1])
-         when "date"        then manDate_to_manOffset(ARGV[a+1])
-         when "parse"       then $Parse = true
-         when "help"        then cmdline_help
-         when "--help"      then cmdline_help
-         when "msg"         then $Add_msg = add_msg
-         when "encode"      then encode(ARGV[a+1])
-         when "decode"      then decode(ARGV[a+1])
-         when "no_rs"       then $Resend = false
-         when "log_level"   then $log_level = ARGV[a+1]
+             when "ds"          then $DontSend = true
+             when "fs"          then $ForceSend = true
+             when "yday?"       then ret_yday
+             when "yday"        then check_yday(ARGV[a+1].to_i)
+             when "date?"       then ret_date(ARGV[a+1])
+             when "date"        then manDate_to_manOffset(ARGV[a+1])
+             when "parse"       then $Parse = true
+             when "help"        then cmdline_help
+             when "--help"      then cmdline_help
+             when "msg"         then $Add_msg = add_msg
+             when "encode"      then encode(ARGV[a+1])
+             when "decode"      then decode(ARGV[a+1])
+             when "no_rs"       then $Resend = false
+             when "log_level"   then $log_level = ARGV[a+1]
+             when "ip?"         then ret_ip
+         else
+             cmdline_help
          end }
 
 if ($DontSend); puts("Don't Send has been turned on.\nNo Emails will be Delieverd!!\n"); end
@@ -489,7 +522,6 @@ else
     $log.info('main') { "Current offset is Manually Set at : " + days_offset.to_s }
 end
 
-
     # Determine if it's been run today or not
 store_pos = DATA.pos
 f = File.new($0,'r+')
@@ -509,6 +541,7 @@ if ( ($Resend == true) || (data_store[0].to_i + 1 != days_offset.to_i) || (data_
     end
     diff = days_to_resend.to_i
     puts ("The total amount of days to resend : #{diff}")
+    $log.warn('main - resend_check') {"The total amount of days to resend : " + diff.to_s }
     diff.downto(2){
         resend_yday = days_offset.to_i - days_to_resend.to_i + 1
         todays_question = find_question(resend_yday)    # This might need to be (days_offset - days_to_resend + 1)
@@ -577,12 +610,12 @@ if ( Time.now.localtime("-05:00").friday? || $Parse == true || Time.now.localtim
 end
 
 f.seek(store_pos)
-f.write(days_offset.to_s + "\n")
-f.write($IsCompleted.to_s + "  ")
+f.write(days_offset.to_s + "\n" + $IsCompleted.to_s + "  \n" + IP.to_s)
 
     # Below the __end__ is the last ran days_offset value to compare
     # if it's been run today or not
 end
 __END__
-136
-true        
+149
+true
+24.141.10.5
