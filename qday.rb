@@ -572,7 +572,11 @@ if ( ($Resend == true) || (data_store[0].to_i + 1 != days_offset.to_i) || (data_
     end
     diff = days_to_resend.to_i
     puts ("The total amount of days to resend : #{diff}")
-    $log.warn('main - resend_check') {"The total amount of days to resend : " + diff.to_s }
+    if ( diff >= 1)
+        $log.warn('main - resend_check') {"The total amount of days to resend : " + diff.to_s }
+    else
+        $log.info('main - resend_check') {"The totat amount of days to resend : " + diff.to_s }
+    end    
     diff.downto(2){
         resend_yday = days_offset.to_i - days_to_resend.to_i + 1
         todays_question = find_question(resend_yday)    # This might need to be (days_offset - days_to_resend + 1)
@@ -647,7 +651,7 @@ f.write(days_offset.to_s + "\n" + $IsCompleted.to_s + "   \n" + hostname.to_s + 
     # if it's been run today or not
 end
 __END__
-161
+162
 true   
 aBox
-24.141.10.5  5  
+204.101.72.200  0

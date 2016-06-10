@@ -717,3 +717,42 @@ I, [2016-06-09 21:58:26 #13521]  INFO -- main: ----- END -----
 
 
 
+I, [2016-06-10 08:19:16 #5319]  INFO -- main: ----- START -----
+I, [2016-06-10 08:19:16 #5319]  INFO -- main: Local Hostname: aBox
+I, [2016-06-10 08:19:16 #5319]  INFO -- main: Public IP Address: 204.101.72.200
+I, [2016-06-10 08:19:16 #5319]  INFO -- main: is_cron running or crontabbed == true
+I, [2016-06-10 08:19:16 #5319]  INFO -- main: Full Arguments list : []
+I, [2016-06-10 08:19:16 #5319]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-06-10 08:19:16 #5319]  INFO -- main: Current offset is : 162
+W, [2016-06-10 08:19:16 #5319]  WARN -- main - resend_check: The total amount of days to resend : 0
+I, [2016-06-10 08:19:16 #5319]  INFO -- find_question: Question that will be sent is : If today was the last day of your life, who would you call and what would you tell them?
+
+
+I, [2016-06-10 08:19:16 #5319]  INFO -- find_question: Provided Offset is : 162
+I, [2016-06-10 08:19:19 #5319]  INFO -- send_emails: 4 Emails sent
+I, [2016-06-10 08:19:19 #5319]  INFO -- main: ----- END -----
+
+
+
+I, [2016-06-10 08:20:53 #5699]  INFO -- main: ----- START -----
+I, [2016-06-10 08:20:53 #5699]  INFO -- main: Local Hostname: aBox
+I, [2016-06-10 08:20:53 #5699]  INFO -- main: Public IP Address: 204.101.72.200
+I, [2016-06-10 08:20:53 #5699]  INFO -- main: is_cron running or crontabbed == true
+I, [2016-06-10 08:20:53 #5699]  INFO -- main: Full Arguments list : ["ds"]
+W, [2016-06-10 08:20:53 #5699]  WARN -- main: Don't Send has been turned on!
+W, [2016-06-10 08:20:53 #5699]  WARN -- main: Emails will not be Sent!
+I, [2016-06-10 08:20:53 #5699]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-06-10 08:20:53 #5699]  INFO -- main: Current offset is : 162
+W, [2016-06-10 08:20:53 #5699]  WARN -- main - resend_check: The total amount of days to resend : 0
+W, [2016-06-10 08:20:53 #5699]  WARN -- send_emails: 0 Emails sent. Already ran today.
+
+ The Current Offset equals the stored offset. 
+ ie: Program was already ran today.
+ 0 Emails sent.
+ Stored offset  : 162
+ Current offset : 162
+
+I, [2016-06-10 08:20:53 #5699]  INFO -- main: ----- END -----
+
+
+
