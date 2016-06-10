@@ -425,6 +425,8 @@ def find_ip?
     begin
         return `wget http://ipinfo.io/ip -qO -`
     rescue
+        $log.warn('find_ip?') {"Unable to find current Public IP. Only returned Localhost IP"}
+        $log.warn('find_ip?') {"Internet connection settings maybe off. Please check!"}
         return "127.0.0.1"
     end
 end
@@ -433,6 +435,8 @@ def find_hostname?
     begin
         return `uname -n`
     rescue
+        $log.error('find_hostname?') {"Unable to determine the Hostname of the current machine by using 'uname -n'!"}
+        $log.error('find_hostname?') {"Hostname is set to : nil"}
         return nil
     end
 end
