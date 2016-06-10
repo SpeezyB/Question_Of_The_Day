@@ -482,8 +482,10 @@ if !( internet_connection? )
 else
     ip = find_ip?
     hostname = find_hostname?
-    $log.info('main') { "Local Hostname: " + hostname.chomp!.to_s }
-    $log.info('main') { "Public IP Address: " + ip.chomp!.to_s }
+    ip.strip!.to_s.freeze
+    hostname.strip!.to_s.freeze
+    $log.info('main') { "Local Hostname: " + hostname }
+    $log.info('main') { "Public IP Address: " + ip }
 end
 
     #Check if cron is running and if there is a cronjob for me in the crontab
@@ -639,9 +641,9 @@ if ( Time.now.localtime("-05:00").friday? || $Parse == true || Time.now.localtim
         puts ("Error Log Email sent.")
     end
 end
-
+puts("ip :#{ip}")
 f.seek(store_pos)
-f.write(days_offset.to_s + "\n" + $IsCompleted.to_s + "   \n" + hostname.to_s + "\n" + ip.to_s + "  " )
+f.write(days_offset.to_s + "\n" + $IsCompleted.to_s + "   \n" + hostname + "\n" + ip + "     " )
 
     # Below the __end__ is the last ran days_offset value to compare
     # if it's been run today or not
@@ -650,4 +652,4 @@ __END__
 161
 true   
 aBox
-24.141.10.5  5  
+24.141.10.5     5  
