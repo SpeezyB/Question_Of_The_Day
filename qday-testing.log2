@@ -756,3 +756,183 @@ I, [2016-06-10 08:20:53 #5699]  INFO -- main: ----- END -----
 
 
 
+I, [2016-06-11 15:59:14 #22502]  INFO -- main: ----- START -----
+I, [2016-06-11 15:59:14 #22502]  INFO -- main: Local Hostname: aBox
+I, [2016-06-11 15:59:14 #22502]  INFO -- main: Public IP Address: 24.141.10.5
+I, [2016-06-11 15:59:14 #22502]  INFO -- main: is_cron running or crontabbed == true
+I, [2016-06-11 15:59:14 #22502]  INFO -- main: Full Arguments list : ["ds"]
+W, [2016-06-11 15:59:14 #22502]  WARN -- main: Don't Send has been turned on!
+W, [2016-06-11 15:59:14 #22502]  WARN -- main: Emails will not be Sent!
+I, [2016-06-11 15:59:14 #22502]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-06-11 15:59:14 #22502]  INFO -- main: Current offset is : 163
+W, [2016-06-11 15:59:14 #22502]  WARN -- comp_past_sess: Diffence in the IP of computers from the prev sent to current!
+W, [2016-06-11 15:59:14 #22502]  WARN -- comp_past_sess: 	Prev IP: 24.141.10.5	Current IP: true   
+W, [2016-06-11 15:59:16 #22502]  WARN -- main - comp_past_sess: Admin Update Email Sent with new details of Hostanme and IP.
+I, [2016-06-11 15:59:16 #22502]  INFO -- main - resend_check: The totat amount of days to resend : 0
+I, [2016-06-11 15:59:16 #22502]  INFO -- find_question: Question that will be sent is : Who do you dream about?
+
+
+I, [2016-06-11 15:59:16 #22502]  INFO -- find_question: Provided Offset is : 163
+I, [2016-06-11 15:59:16 #22502]  INFO -- send_emails: 4 Emails sent
+I, [2016-06-11 15:59:16 #22502]  INFO -- main: ----- END -----
+
+
+
+I, [2016-06-11 17:13:25 #9263]  INFO -- main: ----- START -----
+I, [2016-06-11 17:13:25 #9263]  INFO -- main: Local Hostname: aBox
+I, [2016-06-11 17:13:25 #9263]  INFO -- main: Public IP Address: 24.141.10.5
+I, [2016-06-11 17:13:25 #9263]  INFO -- main: is_cron running or crontabbed == true
+I, [2016-06-11 17:13:26 #9263]  INFO -- main: Full Arguments list : ["help"]
+I, [2016-06-11 17:13:26 #9263]  INFO -- cmdline_help: Command Line Argument(s) was passed. ARGV= ["help"]
+I, [2016-06-11 17:13:26 #9263]  INFO -- cndline_help: ----- END -----
+
+
+
+I, [2016-06-11 17:17:00 #10145]  INFO -- main: ----- START -----
+I, [2016-06-11 17:17:01 #10145]  INFO -- main: Local Hostname: aBox
+I, [2016-06-11 17:17:01 #10145]  INFO -- main: Public IP Address: 24.141.10.5
+I, [2016-06-11 17:17:01 #10145]  INFO -- main: is_cron running or crontabbed == true
+I, [2016-06-11 17:17:01 #10145]  INFO -- main: Full Arguments list : ["ds"]
+W, [2016-06-11 17:17:01 #10145]  WARN -- main: Don't Send has been turned on!
+W, [2016-06-11 17:17:01 #10145]  WARN -- main: Emails will not be Sent!
+I, [2016-06-11 17:17:01 #10145]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-06-11 17:17:01 #10145]  INFO -- main: Current offset is : 163
+W, [2016-06-11 17:17:01 #10145]  WARN -- comp_past_sess: Diffence in the IP of computers from the prev sent to current!
+W, [2016-06-11 17:17:01 #10145]  WARN -- comp_past_sess: 	Prev IP: 24.141.10.5	Current IP: true   
+W, [2016-06-11 17:17:04 #10145]  WARN -- main - comp_past_sess: Admin Update Email Sent with new details of Hostanme and IP.
+I, [2016-06-11 17:17:04 #10145]  INFO -- main - resend_check: The totat amount of days to resend : 0
+W, [2016-06-11 17:17:04 #10145]  WARN -- send_emails: 0 Emails sent. Already ran today.
+
+ The Current Offset equals the stored offset. 
+ ie: Program was already ran today.
+ 0 Emails sent.
+ Stored offset  : 163
+ Current offset : 163
+
+I, [2016-06-11 17:17:04 #10145]  INFO -- main: ----- END -----
+
+
+
+I, [2016-06-11 17:29:24 #13192]  INFO -- main: ----- START -----
+I, [2016-06-11 17:29:25 #13192]  INFO -- main: Local Hostname: aBox
+I, [2016-06-11 17:29:25 #13192]  INFO -- main: Public IP Address: 24.141.10.5
+I, [2016-06-11 17:29:25 #13192]  INFO -- main: is_cron running or crontabbed == true
+I, [2016-06-11 17:29:25 #13192]  INFO -- main: Full Arguments list : ["ds"]
+W, [2016-06-11 17:29:25 #13192]  WARN -- main: Don't Send has been turned on!
+W, [2016-06-11 17:29:25 #13192]  WARN -- main: Emails will not be Sent!
+I, [2016-06-11 17:29:25 #13192]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-06-11 17:29:25 #13192]  INFO -- main: Current offset is : 163
+I, [2016-06-11 17:31:37 #13746]  INFO -- main: ----- START -----
+I, [2016-06-11 17:31:37 #13746]  INFO -- main: Local Hostname: aBox
+I, [2016-06-11 17:31:37 #13746]  INFO -- main: Public IP Address: 24.141.10.5
+I, [2016-06-11 17:31:37 #13746]  INFO -- main: is_cron running or crontabbed == true
+I, [2016-06-11 17:31:37 #13746]  INFO -- main: Full Arguments list : ["ds"]
+W, [2016-06-11 17:31:37 #13746]  WARN -- main: Don't Send has been turned on!
+W, [2016-06-11 17:31:37 #13746]  WARN -- main: Emails will not be Sent!
+I, [2016-06-11 17:31:37 #13746]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-06-11 17:31:37 #13746]  INFO -- main: Current offset is : 163
+I, [2016-06-11 17:33:43 #14272]  INFO -- main: ----- START -----
+I, [2016-06-11 17:33:44 #14272]  INFO -- main: Local Hostname: aBox
+I, [2016-06-11 17:33:44 #14272]  INFO -- main: Public IP Address: 24.141.10.5
+I, [2016-06-11 17:33:44 #14272]  INFO -- main: is_cron running or crontabbed == true
+I, [2016-06-11 17:33:44 #14272]  INFO -- main: Full Arguments list : ["ds"]
+W, [2016-06-11 17:33:44 #14272]  WARN -- main: Don't Send has been turned on!
+W, [2016-06-11 17:33:44 #14272]  WARN -- main: Emails will not be Sent!
+I, [2016-06-11 17:33:44 #14272]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-06-11 17:33:44 #14272]  INFO -- main: Current offset is : 163
+I, [2016-06-11 17:34:25 #14454]  INFO -- main: ----- START -----
+I, [2016-06-11 17:34:26 #14454]  INFO -- main: Local Hostname: aBox
+I, [2016-06-11 17:34:26 #14454]  INFO -- main: Public IP Address: 24.141.10.5
+I, [2016-06-11 17:34:26 #14454]  INFO -- main: is_cron running or crontabbed == true
+I, [2016-06-11 17:34:26 #14454]  INFO -- main: Full Arguments list : ["ds"]
+W, [2016-06-11 17:34:26 #14454]  WARN -- main: Don't Send has been turned on!
+W, [2016-06-11 17:34:26 #14454]  WARN -- main: Emails will not be Sent!
+I, [2016-06-11 17:34:26 #14454]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-06-11 17:34:26 #14454]  INFO -- main: Current offset is : 163
+W, [2016-06-11 17:34:26 #14454]  WARN -- comp_past_sess: Diffence in the IP of computers from the prev sent to current!
+W, [2016-06-11 17:34:26 #14454]  WARN -- comp_past_sess: 	Prev IP: true	Current IP: 24.141.10.5
+W, [2016-06-11 17:34:28 #14454]  WARN -- main - comp_past_sess: Admin Update Email Sent with new details of Hostanme and IP.
+I, [2016-06-11 17:34:28 #14454]  INFO -- main - resend_check: The totat amount of days to resend : 0
+W, [2016-06-11 17:34:28 #14454]  WARN -- send_emails: 0 Emails sent. Already ran today.
+
+ The Current Offset equals the stored offset. 
+ ie: Program was already ran today.
+ 0 Emails sent.
+ Stored offset  : 163
+ Current offset : 163
+
+I, [2016-06-11 17:34:28 #14454]  INFO -- main: ----- END -----
+
+
+
+I, [2016-06-11 17:48:20 #17834]  INFO -- main: ----- START -----
+I, [2016-06-11 17:48:20 #17834]  INFO -- main: Local Hostname: aBox
+I, [2016-06-11 17:48:20 #17834]  INFO -- main: Public IP Address: 24.141.10.5
+I, [2016-06-11 17:48:20 #17834]  INFO -- main: is_cron running or crontabbed == true
+I, [2016-06-11 17:48:20 #17834]  INFO -- main: Full Arguments list : ["dsa"]
+W, [2016-06-11 17:48:20 #17834]  WARN -- main: Don't Send has been turned on!
+W, [2016-06-11 17:48:20 #17834]  WARN -- main: Emails will not be Sent!
+I, [2016-06-11 17:48:20 #17834]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-06-11 17:48:20 #17834]  INFO -- main: Current offset is : 163
+W, [2016-06-11 17:48:20 #17834]  WARN -- comp_past_sess: Diffence in the IP of computers from the prev sent to current!
+W, [2016-06-11 17:48:20 #17834]  WARN -- comp_past_sess: 	Prev IP: true	Current IP: 24.141.10.5
+W, [2016-06-11 17:48:20 #17834]  WARN -- main - comp_past_sess: Admin Update Email Sent with new details of Hostanme and IP.
+I, [2016-06-11 17:48:20 #17834]  INFO -- main - resend_check: The totat amount of days to resend : 0
+W, [2016-06-11 17:48:20 #17834]  WARN -- send_emails: 0 Emails sent. Already ran today.
+
+ The Current Offset equals the stored offset. 
+ ie: Program was already ran today.
+ 0 Emails sent.
+ Stored offset  : 163
+ Current offset : 163
+
+I, [2016-06-11 17:48:20 #17834]  INFO -- main: ----- END -----
+
+
+
+I, [2016-06-11 17:53:17 #19050]  INFO -- main: ----- START -----
+I, [2016-06-11 17:53:17 #19050]  INFO -- main: Local Hostname: aBox
+I, [2016-06-11 17:53:17 #19050]  INFO -- main: Public IP Address: 24.141.10.5
+I, [2016-06-11 17:53:17 #19050]  INFO -- main: is_cron running or crontabbed == true
+I, [2016-06-11 17:53:17 #19050]  INFO -- main: Full Arguments list : ["dsa"]
+W, [2016-06-11 17:53:17 #19050]  WARN -- main: Don't Send has been turned on!
+W, [2016-06-11 17:53:17 #19050]  WARN -- main: Emails will not be Sent!
+I, [2016-06-11 17:53:17 #19050]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-06-11 17:53:17 #19050]  INFO -- main: Current offset is : 163
+I, [2016-06-11 17:53:17 #19050]  INFO -- comp_past_sess: Current Session is runnig on the same Hostanme and IP
+I, [2016-06-11 17:53:17 #19050]  INFO -- main - resend_check: The totat amount of days to resend : 0
+W, [2016-06-11 17:53:17 #19050]  WARN -- send_emails: 0 Emails sent. Already ran today.
+
+ The Current Offset equals the stored offset. 
+ ie: Program was already ran today.
+ 0 Emails sent.
+ Stored offset  : 163
+ Current offset : 163
+
+I, [2016-06-11 17:53:17 #19050]  INFO -- main: ----- END -----
+
+
+
+I, [2016-06-11 17:56:15 #19851]  INFO -- main: ----- START -----
+I, [2016-06-11 17:56:16 #19851]  INFO -- main: Local Hostname: aBox
+I, [2016-06-11 17:56:16 #19851]  INFO -- main: Public IP Address: 24.141.10.5
+I, [2016-06-11 17:56:16 #19851]  INFO -- main: is_cron running or crontabbed == true
+I, [2016-06-11 17:56:16 #19851]  INFO -- main: Full Arguments list : ["dsa"]
+W, [2016-06-11 17:56:16 #19851]  WARN -- main: Don't Send has been turned on!
+W, [2016-06-11 17:56:16 #19851]  WARN -- main: Emails will not be Sent!
+I, [2016-06-11 17:56:16 #19851]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-06-11 17:56:16 #19851]  INFO -- main: Current offset is : 163
+I, [2016-06-11 17:56:16 #19851]  INFO -- comp_past_sess: Current Session is running on the same Hostanme and IP
+I, [2016-06-11 17:56:16 #19851]  INFO -- main - resend_check: The totat amount of days to resend : 0
+W, [2016-06-11 17:56:16 #19851]  WARN -- send_emails: 0 Emails sent. Already ran today.
+
+ The Current Offset equals the stored offset. 
+ ie: Program was already ran today.
+ 0 Emails sent.
+ Stored offset  : 163
+ Current offset : 163
+
+I, [2016-06-11 17:56:16 #19851]  INFO -- main: ----- END -----
+
+
+
