@@ -9,11 +9,15 @@ require 'base64'
 gem 'logger'; require 'logger'
 gem 'mail'; require 'mail'
 
-DATA_FILE_YAML = "fulldat.yml".freeze
-$Log_file = "qday-testing.log2".freeze
+
+#DATA_FILE_YAML = "/home/ben/code/qday/Ruby/fulldat.yml"
+#$Log_file = "/home/ben/code/qday/Ruby/qday-testing.log"
+
+DATA_FILE_YAML = "fulldat.yml"
+$Log_file = "qday-testing.log2"
 
 $QDAY_DOC_SET, $QDAY_DOC_RECP, $QDAY_DOC_QUESTIONS = [], [], []
-$Reset_ipname, $IsCompleted, $ForceSend, $Parse, $DontSend, $DontSendAll = false, false, false, false, false, false
+$IsCompleted, $ForceSend, $Parse, $DontSend = false, false, false, false
 $Manual_offset = 0
 $Add_msg = ""
 $Resend = true
@@ -28,6 +32,7 @@ logger.info "general logs"
 logger.warn "oh my…this isn't good"
 logger.error "boom!"
 logger.fatal "oh crap…"                     # Won't Use - Compiler Error
+
 =end
 
 def check_required_files?
@@ -87,7 +92,7 @@ def send_emails(input_file, recipients, subject_line, message)
                 :password             => input_file[4],
                 :authentication       => input_file[5],
                 :enable_starttls_auto => input_file[6]  }
-
+    
     if ( subject_line == nil || subject_line == "" )
         subject_line = input_file[7]
     end
@@ -111,9 +116,8 @@ def auto_parse_log_file(logfilepath)
         puts ("Cannot Parse Log File.\nLog File Does Not Exist!!\n\n")
         exit()
     end
-    $log_level = $log_level.dup.upcase! if $log_level.frozen?
     logfiledata, error_dates = [], []
-    parsed_message = ""
+    parsed_message = String.new
     logfile = File.open(logfilepath)
     logfile.each{|lines|
                  logfiledata << lines }
@@ -145,7 +149,6 @@ def auto_parse_log_file(logfilepath)
                          end }
                      }
     parsed_message += "\n\nCurrent offset of today : #{Time.now.localtime("-05:00").yday}\nTodays's Date is : #{Time.now.localtime("-05:00")}\n"
-
     if (error_dates.empty?)
         return nil
     else
@@ -238,12 +241,17 @@ def yday_to_date(rawyday)
         6       =>  "Sat"
     }
 
-    @weekday, @day, @month, @year = "", "", "", Time.now.localtime("-05:00").year.to_s  
+    # days_in_month_array = days_in_month.to_a.flatten!
+    # days_in_week_array = days_in_week.to_a.flatten!
+
+    @weekday, @day, @month, @year = "", "", "", Time.now.localtime("-05:00").year.to_s  # Need to account for past years = TODO
 
     days_in_month.each{|mon_val| # An Array of each Key Value Pair
+        puts "mon_val = #{mon_val}\nrawyday = #{rawyday}"
         if (rawyday - mon_val[1] <= 0)
             @month = mon_val[0]
             @day = rawyday
+            puts "@month = #{@month}\n@day = #{@day}"
             3.times{ # weeks in a month
                 if (rawyday - 7 < 0)
                     @wkdy = Time.new(@year, @month, @day, 5, 1, 1, "-05:00").wday
@@ -306,20 +314,14 @@ def cmdline_help
                                    you will need to push <CTRL+D> to exit edit mode and send the
                                    emails.
             ds                  : Don't Send, will not acutally send the emails.
-                                   Note: This will over ride 'fs' (force send). This will also set
-                                   the yday for today
-            dsa                 : Don't Send All, will not send ANY emails even Admin Updates or 
-                                   Error Logs
+                                   Note: This will over ride 'fs' (force send)
             help                : Display this message
             encode file.txt     : Encodes supplied file name from a text file, then exits
             decode file.ebs     : Decodes supplied file name back to a text file, then exits
             no_rs               : This will turn OFF the automatic check and resend of past emails.
             log_level ERROR     : What level to return from the auto_parse_log_file :default is ERROR,
                                    other options are WARN or INFO (which would return the whole file)
-            ip?                 : returns current public IP address and exits
-            hostname?           : returns the hostname of the local device and exits
-            reset_ipname        : doesn't perform hostname or ip check, resets values to current 
-                                   sessions config
+
 
     """)
     $log.info('cmdline_help') {"Command Line Argument(s) was passed. ARGV= " + ARGV.to_s}
@@ -412,73 +414,11 @@ def find_question(search_offset) # Find the question associated with the provide
     return found_question
 end
 
-def is_croned?
-    #check for cron 1st
-    begin
-        false unless (`ps -e | grep cron` == nil) || (`crontab -l`.to_str.chomp!.include?("no crontab for")); true
-    end
-end
-
-def find_ip?
-    begin
-        return `wget http://ipinfo.io/ip -qO -`
-    rescue
-        $log.warn('find_ip?') {"Unable to find current Public IP. Only returned Localhost IP"}
-        $log.warn('find_ip?') {"Internet connection settings maybe off. Please check!"}
-        return "127.0.0.1"
-    end
-end
-
-def find_hostname?
-    begin
-        return `uname -n`
-    rescue
-        $log.error('find_hostname?') {"Unable to determine the Hostname of the current machine by using 'uname -n'!"}
-        $log.error('find_hostname?') {"Hostname is set to : nil"}
-        return nil
-    end
-end
-
-def ret_ip
-    @ip = find_ip?
-    puts("Public IP: #{@ip}")
-    $log.info('ret_ip') {"Pulic IP Adress: " + @ip.chomp!.to_s}
-    $log.info('ret_ip') {"Command Line Argument(s) was passed. ARGV= " + ARGV.to_s}
-    $log.info('ret_ip') {"----- END -----\n\n\n"}
-    exit()
-end
-
-def ret_hostname
-    @hostname = find_hostname?
-    puts("Local Hostname: #{@hostname.strip!}")
-    $log.info('ret_hostname') {"Local Hostname: " + @hostname.strip!.to_s}
-    $log.info('ret_hostname') {"Command Line Argument(s) was passed. ARGV= " + ARGV.to_s}
-    $log.info('ret_hostname') {"----- END -----\n\n\n"}
-    exit()
-end
-
-def comp_past_sess(cur_ip,cur_hname,past_ip,past_hname)         # return true means there is a difference
-    if (past_hname == cur_hname)
-        if (past_ip != cur_ip)
-            $log.warn('comp_past_sess') {"Diffence in the IP of computers from the prev sent to current!"} 
-            $log.warn('comp_past_sess') {"\tPrev IP: " + past_ip.to_s + "\tCurrent IP: " + cur_ip.to_s}
-            return true                                         # there is a difference with ip, send it 
-        else
-            $log.info('comp_past_sess') {"Current Session is running on the same Hostanme and IP as last run."}
-            return false                                        # there is no difference don't send it 
-        end
-    else
-        $log.warn('comp_past_sess') {"Diffence in the Hostname of computers from the prev sent to current!"} 
-        $log.warn('comp_past_sess') {"\tPrev hostname: " + past_hname.to_s + "\tCurrent hostname: " + cur_hname.to_s}
-        return true                                             # there is a difference with hostname, send it
-    end
-end
-
-    # ************************ Begin Main Program Here. ************************
+    # Begin Main Program Here.
 begin
 check_log_date()
 $log.level = Logger::INFO            # all msg's from info and up will be logged
-$log.datetime_format = "%Y-%m-%d %H:%M:%S ".freeze
+$log.datetime_format = "%Y-%m-%d %H:%M:%S "
 $log.info('main') {"----- START -----"}
 
     # Check for required Files and Internet. If it doesn't exist exit program
@@ -491,60 +431,34 @@ end
 if !( internet_connection? )
     puts ("      !!!Error No Internet Connection Found!!!")
     puts ("Please Establish an Internet Connection and Re-Run!\n\n")
-    $log.error('main') { "No Internet Connection - Unable to open 'http://www.google.com/'"}
-    $log.error('main') {"----- END -----\n\n\n"}
+    $log.error('main') { "No Internet Connection - Unable to open 'http://www.google.com/'"  + "\n----- END -----\n\n\n"}
     exit()
-else
-    ip = find_ip?
-    hostname = find_hostname?
-    ip.to_s.strip!.freeze
-    hostname.to_s.strip!.freeze
-    $log.info('main') { "Local Hostname: " + hostname }
-    $log.info('main') { "Public IP Address: " + ip }
-end
-
-    #Check if cron is running and if there is a cronjob for me in the crontab
-is_cron = is_croned?
-if !(is_cron)
-    $log.warn('main') { "is_cron running or crontabbed == #{is_cron}"}
-else
-    $log.info('main') { "is_cron running or crontabbed == #{is_cron}"}
 end
 
     #Load your saved Data form the YAML file and put into 3 objects
 $QDAY_DOC_SET, $QDAY_DOC_RECP, $QDAY_DOC_QUESTIONS = YAML.load_file(DATA_FILE_YAML)
 
+
 $log.info('main') { "Full Arguments list : " + ARGV.to_s }
 ARGV.each_index{|a|
           case ARGV[a]
-             when "ds"              then $DontSend = true
-             when "dsa"             then $DontSendAll = true
-             when "fs"              then $ForceSend = true
-             when "yday?"           then ret_yday
-             when "yday"            then check_yday(ARGV[a+1].to_i)
-             when "date?"           then ret_date(ARGV[a+1])
-             when "date"            then manDate_to_manOffset(ARGV[a+1])
-             when "parse"           then $Parse = true
-             when "help"            then cmdline_help
-             when "--help"          then cmdline_help
-             when "msg"             then $Add_msg = add_msg
-             when "encode"          then encode(ARGV[a+1])
-             when "decode"          then decode(ARGV[a+1])
-             when "no_rs"           then $Resend = false
-             when "log_level"       then $log_level = ARGV[a+1]
-             when "ip?"             then ret_ip
-             when "hostname?"       then ret_hostname
-             when "reset_ipname"    then $Reset_ipname = true
-#         else                  
-#             cmdline_help          # This only can happen when ARGV[a+1] is replaced w/ param=value
+         when "ds"          then $DontSend = true
+         when "fs"          then $ForceSend = true
+         when "yday?"       then ret_yday
+         when "yday"        then check_yday(ARGV[a+1].to_i)
+         when "date?"       then ret_date(ARGV[a+1])
+         when "date"        then manDate_to_manOffset(ARGV[a+1])
+         when "parse"       then $Parse = true
+         when "help"        then cmdline_help
+         when "--help"      then cmdline_help
+         when "msg"         then $Add_msg = add_msg
+         when "encode"      then encode(ARGV[a+1])
+         when "decode"      then decode(ARGV[a+1])
+         when "no_rs"       then $Resend = false
+         when "log_level"   then $log_level = ARGV[a+1]
          end }
 
-if ($DontSend || $DontSendAll) 
-    if ($DontSendAll); $DontSend = true; end
-    puts("Don't Send has been turned on.\nNo Emails will be Delieverd!!\n")
-    $log.warn('main') {"Don't Send has been turned on!"}
-    $log.warn('main') {"Emails will not be Sent!"}
-end
+if ($DontSend); puts("Don't Send has been turned on.\nNo Emails will be Delieverd!!\n"); end
 
     # (1 .. 500) 500 is the max amount of emails / day you can send with Gmail
 recipients_list = Array.new
@@ -573,6 +487,7 @@ else
     $log.info('main') { "Current offset is Manually Set at : " + days_offset.to_s }
 end
 
+
     # Determine if it's been run today or not
 store_pos = DATA.pos
 f = File.new($0,'r+')
@@ -584,18 +499,7 @@ DATA.each {|line|
     data_store << line.chomp!
           }
 data_store.uniq!
-stored_hname, stored_ip = data_store[2], data_store[3]
-stored_ip.strip!.freeze
-stored_hname.strip!.freeze
-if !($Reset_ipname) 
-    if (comp_past_sess(ip,hostname,stored_ip,stored_hname))     # true means there is a difference
-        admin_update_msg = "Current Public IP address of local machine is: #{ip} \n\nCurrent Offset is :#{days_offset}"
-        if !($DontSendAll); send_emails($QDAY_DOC_SET, "Ben.spiessens@live.ca", "Qday ---ADMIN UPDATE---", admin_update_msg); end
-        puts("Admin Update submited and emailed.")
-        $log.warn('main - comp_past_sess') {"Admin Update Email Sent with new details of Hostanme and IP."}
-    end
-end
-    
+
     # Perform a check to see if the program was completed yesterday or not and resend the emails if not.
 if ( ($Resend == true) || (data_store[0].to_i + 1 != days_offset.to_i) || (data_store[1] == false) )
     if ( days_offset.to_i - data_store[0].to_i > 1 ) # Find out how many days we need to make up for
@@ -603,11 +507,6 @@ if ( ($Resend == true) || (data_store[0].to_i + 1 != days_offset.to_i) || (data_
     end
     diff = days_to_resend.to_i
     puts ("The total amount of days to resend : #{diff}")
-    if ( diff >= 1)
-        $log.warn('main - resend_check') {"The total amount of days to resend : " + diff.to_s }
-    else
-        $log.info('main - resend_check') {"The totat amount of days to resend : " + diff.to_s }
-    end    
     diff.downto(2){
         resend_yday = days_offset.to_i - days_to_resend.to_i + 1
         todays_question = find_question(resend_yday)    # This might need to be (days_offset - days_to_resend + 1)
@@ -615,7 +514,7 @@ if ( ($Resend == true) || (data_store[0].to_i + 1 != days_offset.to_i) || (data_
         resend_date_str = "\nThis is a ReSend for : " + resend_date[2].to_s + " " + resend_date[1].to_s + " " +
             resend_date[3].to_s + " " + resend_date[0].to_s
         todays_question += resend_date_str
-        if !($DontSend || $DontSendAll); send_emails($QDAY_DOC_SET, full_recipients_list, "Question of the day -RESEND-", todays_question); end
+        if !($DontSend); send_emails(QDAY_DOC_SET, full_recipients_list, "Question of the day -RESEND-", todays_question); end
         puts ("#{resend_date_str}")
         puts ("#{recipients_list.length} Emails sent.\n" + "-" * $padding)
         $log.warn('main - resend_check') {"Current offset : " + resend_yday.to_s}
@@ -629,7 +528,7 @@ end
 if ($Manual_offset = 0 && !$ForceSend )
     if ( data_store[0] != days_offset.to_s )
         todays_question = find_question(days_offset)
-        if !($DontSend || $DontSendAll); send_emails($QDAY_DOC_SET, full_recipients_list, "", todays_question); end
+        if !($DontSend); send_emails($QDAY_DOC_SET, full_recipients_list, "", todays_question); end
         puts("#{recipients_list.length} Emails sent.\n" + "-" * $padding)
         $log.info('send_emails') { recipients_list.length.to_s + " Emails sent" }
         $IsCompleted = true
@@ -642,13 +541,13 @@ if ($Manual_offset = 0 && !$ForceSend )
 else
     if ($ForceSend)
         todays_question = find_question(days_offset)
-        if !($DontSend || $DontSendAll); send_emails($QDAY_DOC_SET, full_recipients_list, "", todays_question); end
+        if !($DontSend); send_emails($QDAY_DOC_SET, full_recipients_list, "", todays_question); end
         puts ("#{recipients_list.length} Emails Force_sent.\n" + "-" * $padding)
         $log.info('send_emails - ForceSend') { recipients_list.length.to_s + " Emails Force_sent" }
         $IsCompleted = true
     else
         todays_question = find_question(days_offset)
-        if !($DontSend || $DontSendAll); send_emails($QDAY_DOC_SET, full_recipients_list, "", todays_question); end
+        if !($DontSend); send_emails($QDAY_DOC_SET, full_recipients_list, "", todays_question); end
         puts ("#{recipients_list.length} Emails sent from Manual_offset.\n" + "-" * $padding)
         $log.info('send_emails - Manual_offset') { recipients_list.length.to_s + " Emails sent from Manual_offset" }
         $IsCompleted = true
@@ -663,7 +562,7 @@ if ( Time.now.localtime("-05:00").friday? || $Parse == true || Time.now.localtim
     error_log_message = String.new
     error_log_message = auto_parse_log_file($Log_file)
     if !(error_log_message.nil?)
-        if !($DontSendAll); send_emails($QDAY_DOC_SET, "ben.spiessens@live.ca","Qday ---ERROR LOG---", error_log_message); end
+        send_emails($QDAY_DOC_SET, "ben.spiessens@live.ca","Qday ---ERROR LOG---", error_log_message)
         puts ("""
         Is it Friday = #{Time.now.localtime("-05:00").friday?}
         Was the parse command line argument passed = #{$Parse}
@@ -676,16 +575,12 @@ if ( Time.now.localtime("-05:00").friday? || $Parse == true || Time.now.localtim
 end
 
 f.seek(store_pos)
-f.write(days_offset.to_s + "\n" + $IsCompleted.to_s + "   \n" + hostname.to_s + "\n" + ip.to_s + " " * 20 )
+f.write(days_offset.to_s + "\n")
+f.write($IsCompleted.to_s + "  ")
 
     # Below the __end__ is the last ran days_offset value to compare
     # if it's been run today or not
-    # the hostname of the computer the script was last run on
-    # the ip address of the computer the script was last run on
-    # and some spacing padding
 end
 __END__
-163
-true   
-aBox
-24.141.10.5                                
+132
+true    
