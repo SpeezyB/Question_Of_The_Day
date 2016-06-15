@@ -9,10 +9,6 @@ require 'base64'
 gem 'logger'; require 'logger'
 gem 'mail'; require 'mail'
 
-
-#DATA_FILE_YAML = "/home/ben/code/qday/Ruby/fulldat.yml"
-#$Log_file = "/home/ben/code/qday/Ruby/qday-testing.log"
-
 DATA_FILE_YAML = "fulldat.yml".freeze
 $Log_file = "qday-testing.log2".freeze
 
@@ -32,7 +28,6 @@ logger.info "general logs"
 logger.warn "oh my…this isn't good"
 logger.error "boom!"
 logger.fatal "oh crap…"                     # Won't Use - Compiler Error
-
 =end
 
 def check_required_files?
@@ -118,7 +113,7 @@ def auto_parse_log_file(logfilepath)
     end
     $log_level = $log_level.dup.upcase! if $log_level.frozen?
     logfiledata, error_dates = [], []
-    parsed_message = String.new
+    parsed_message = ""
     logfile = File.open(logfilepath)
     logfile.each{|lines|
                  logfiledata << lines }
@@ -326,7 +321,6 @@ def cmdline_help
             reset_ipname        : doesn't perform hostname or ip check, resets values to current 
                                    sessions config
 
-
     """)
     $log.info('cmdline_help') {"Command Line Argument(s) was passed. ARGV= " + ARGV.to_s}
     $log.info('cndline_help') {"----- END -----\n\n\n"}
@@ -484,7 +478,7 @@ end
 begin
 check_log_date()
 $log.level = Logger::INFO            # all msg's from info and up will be logged
-$log.datetime_format = "%Y-%m-%d %H:%M:%S "
+$log.datetime_format = "%Y-%m-%d %H:%M:%S ".freeze
 $log.info('main') {"----- START -----"}
 
     # Check for required Files and Internet. If it doesn't exist exit program
@@ -686,6 +680,9 @@ f.write(days_offset.to_s + "\n" + $IsCompleted.to_s + "   \n" + hostname.to_s + 
 
     # Below the __end__ is the last ran days_offset value to compare
     # if it's been run today or not
+    # the hostname of the computer the script was last run on
+    # the ip address of the computer the script was last run on
+    # and some spacing padding
 end
 __END__
 163

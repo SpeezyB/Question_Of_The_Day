@@ -936,3 +936,55 @@ I, [2016-06-11 17:56:16 #19851]  INFO -- main: ----- END -----
 
 
 
+I, [2016-06-15 18:15:31 #452]  INFO -- main: ----- START -----
+I, [2016-06-15 18:15:31 #452]  INFO -- main: Local Hostname: aBox
+I, [2016-06-15 18:15:31 #452]  INFO -- main: Public IP Address: 204.101.72.200
+I, [2016-06-15 18:15:31 #452]  INFO -- main: is_cron running or crontabbed == true
+I, [2016-06-15 18:15:31 #452]  INFO -- main: Full Arguments list : ["dsa"]
+W, [2016-06-15 18:15:31 #452]  WARN -- main: Don't Send has been turned on!
+W, [2016-06-15 18:15:31 #452]  WARN -- main: Emails will not be Sent!
+I, [2016-06-15 18:15:31 #452]  INFO -- main: Full recipients list : "Ben.spiessens@live.ca", "mira.inger@gmail.com", "amberoklis@yahoo.ca", "Ben.spiessens@yahoo.ca", 
+I, [2016-06-15 18:15:31 #452]  INFO -- main: Current offset is : 167
+W, [2016-06-15 18:15:31 #452]  WARN -- comp_past_sess: Diffence in the IP of computers from the prev sent to current!
+W, [2016-06-15 18:15:31 #452]  WARN -- comp_past_sess: 	Prev IP: 24.141.10.5	Current IP: 204.101.72.200
+W, [2016-06-15 18:15:31 #452]  WARN -- main - comp_past_sess: Admin Update Email Sent with new details of Hostanme and IP.
+W, [2016-06-15 18:15:31 #452]  WARN -- main - resend_check: The total amount of days to resend : 4
+I, [2016-06-15 18:15:31 #452]  INFO -- find_question: Question that will be sent is : What do you have trouble seeing clearly in your mind?
+
+
+I, [2016-06-15 18:15:31 #452]  INFO -- find_question: Provided Offset is : 164
+W, [2016-06-15 18:15:31 #452]  WARN -- main - resend_check: Current offset : 164
+W, [2016-06-15 18:15:31 #452]  WARN -- main - resend_check: Resend Msg : What do you have trouble seeing clearly in your mind?
+
+
+This is a ReSend for :  Jun 12 2016
+W, [2016-06-15 18:15:31 #452]  WARN -- main - resend_check: This is a ReSend for :  Jun 12 2016
+I, [2016-06-15 18:15:31 #452]  INFO -- find_question: Question that will be sent is : What are you looking forward to?
+
+
+I, [2016-06-15 18:15:31 #452]  INFO -- find_question: Provided Offset is : 165
+W, [2016-06-15 18:15:31 #452]  WARN -- main - resend_check: Current offset : 165
+W, [2016-06-15 18:15:31 #452]  WARN -- main - resend_check: Resend Msg : What are you looking forward to?
+
+
+This is a ReSend for :  Jun 13 2016
+W, [2016-06-15 18:15:31 #452]  WARN -- main - resend_check: This is a ReSend for :  Jun 13 2016
+I, [2016-06-15 18:15:31 #452]  INFO -- find_question: Question that will be sent is : What is the number one thing you want to accomplish before you die?
+
+
+I, [2016-06-15 18:15:31 #452]  INFO -- find_question: Provided Offset is : 166
+W, [2016-06-15 18:15:31 #452]  WARN -- main - resend_check: Current offset : 166
+W, [2016-06-15 18:15:31 #452]  WARN -- main - resend_check: Resend Msg : What is the number one thing you want to accomplish before you die?
+
+
+This is a ReSend for :  Jun 14 2016
+W, [2016-06-15 18:15:31 #452]  WARN -- main - resend_check: This is a ReSend for :  Jun 14 2016
+I, [2016-06-15 18:15:31 #452]  INFO -- find_question: Question that will be sent is : When is love a weakness?
+
+
+I, [2016-06-15 18:15:31 #452]  INFO -- find_question: Provided Offset is : 167
+I, [2016-06-15 18:15:31 #452]  INFO -- send_emails: 4 Emails sent
+I, [2016-06-15 18:15:31 #452]  INFO -- main: ----- END -----
+
+
+
